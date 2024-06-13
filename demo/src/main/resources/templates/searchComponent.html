@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cerca Componente</title>
+</head>
+<body>
+<h1>Cerca Componente</h1>
+<form th:action="@{/searchComponent}" method="post">
+    <label for="codiceProdotto">Codice Prodotto:</label>
+    <input type="text" id="codiceProdotto" name="codiceProdotto" required><br>
+    <button type="submit">Cerca</button>
+</form>
+<div th:if="${message}">
+    <p th:text="${message}"></p>
+</div>
+<div th:if="${error}">
+    <p th:text="${error}"></p>
+</div>
+<div th:if="${componenteMeccanico != null}">
+    <p>ID: <span th:text="${componenteMeccanico.id}"></span></p>
+    <p>Codice Prodotto: <span th:text="${componenteMeccanico.codiceProdotto}"></span></p>
+    <p>Nome: <span th:text="${componenteMeccanico.nome}"></span></p>
+    <p>Descrizione: <span th:text="${componenteMeccanico.descrizione}"></span></p>
+    <p>Quantità: <span th:text="${componenteMeccanico.quantità}"></span></p>
+    <p>Prezzo: <span th:text="${componenteMeccanico.prezzo}"></span></p>
+    <p>Data Inserimento: <span th:text="${componenteMeccanico.dataInserimento}"></span></p>
+</div>
+</body>
+</html>

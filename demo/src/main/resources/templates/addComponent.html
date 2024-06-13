@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Aggiungi Componente</title>
+</head>
+<body>
+<h1>Aggiungi Componente</h1>
+<form th:action="@{/addComponent}" th:object="${componenteMeccanico}" method="post">
+    <label for="codiceProdotto">Codice Prodotto:</label>
+    <input type="text" id="codiceProdotto" th:field="*{codiceProdotto}" required><br>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}" required><br>
+    <label for="descrizione">Descrizione:</label>
+    <textarea id="descrizione" th:field="*{descrizione}"></textarea><br>
+    <label for="quantità">Quantità:</label>
+    <input type="number" id="quantità" th:field="*{quantità}" required><br>
+    <label for="prezzo">Prezzo:</label>
+    <input type="number" step="0.01" id="prezzo" th:field="*{prezzo}" required><br>
+    <button type="submit">Aggiungi</button>
+</form>
+<div th:if="${message}">
+    <p th:text="${message}"></p>
+</div>
+<div th:if="${error}">
+    <p th:text="${error}"></p>
+</div>
+</body>
+</html>

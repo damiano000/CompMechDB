@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cancella Componente</title>
+</head>
+<body>
+<h1>Cancella Componente</h1>
+<form th:action="@{/deleteComponent}" method="post">
+    <label for="id">ID:</label>
+    <input type="number" id="id" name="id" required><br>
+    <button type="submit">Cancella</button>
+</form>
+<div th:if="${message}">
+    <p th:text="${message}"></p>
+</div>
+<div th:if="${error}">
+    <p th:text="${error}"></p>
+</div>
+</body>
+</html>
